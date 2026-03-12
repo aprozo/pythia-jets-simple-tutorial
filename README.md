@@ -56,7 +56,7 @@ sudo apt install -y apptainer
 
 ```bash
 git clone https://github.com/aprozo/pythia-jets-simple-tutorial.git
-cd star-tutorial
+cd pythia-jets-simple-tutorial
 apptainer pull rivet-pythia.sif docker://hepstore/rivet-pythia:main
 apptainer exec rivet-pythia.sif bash
 ```
