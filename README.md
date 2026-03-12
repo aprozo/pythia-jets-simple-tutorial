@@ -18,7 +18,7 @@ Format for executable arguments : `pTHatMin pTHatMax|inf [nEvents=50000]`
 
 ```bash
 make
-./makeTree 10 15 10000
+./makeTree 30 50 10000
 ```
 
 Parameters can be tuned in `makeTree.cc`
@@ -56,7 +56,7 @@ sudo apt install -y apptainer
 
 ```bash
 git clone https://github.com/aprozo/pythia-jets-simple-tutorial.git
-cd star-tutorial
+cd pythia-jets-simple-tutorial
 apptainer pull rivet-pythia.sif docker://hepstore/rivet-pythia:main
 apptainer exec rivet-pythia.sif bash
 ```
