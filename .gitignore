@@ -1,8 +1,10 @@
 #ROOT
 *.ROOT
 makeTree
+*.root
 
-
+*.pcm
+*dict
 
 # Prerequisites
 *.d
