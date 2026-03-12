@@ -15,10 +15,10 @@ to start a container (predefined software environment).
 ## Running Steps
 
 Format for executable arguments : `pTHatMin pTHatMax|inf [nEvents=50000]`
-
+For example, generating events with 10 < ptHat< 20 Gev/c for 1000 events would be:
 ```bash
 make
-./makeTree 30 50 10000
+./makeTree 10 20 1000
 ```
 
 Parameters can be tuned in `makeTree.cc`
@@ -31,18 +31,19 @@ Parameters can be tuned in `makeTree.cc`
   const double particleEtaMax = 1.5;
 ```
 
-After that run for analysis of jet tree:
+After that run for analysis of jet tree which will fill some basic histograms based on that file:
 
 ```bash
-root -l -b -q anaTree.cpp
+root -l -b -q anaTree.cpp+
 ```
 
 ## Remark: Running on your own laptop
 
-In case you want to enter and run STAR container on your own laptop:
+In case you want to enter and run on your own laptop:
 
-- You need to install either [Docker engine](https://docs.docker.com/get-started/get-docker/) or [Apptainer (singularity)](https://apptainer.org/docs/admin/main/installation.html).
-  For simplier Apptainer (singularity) installation:
+- You need to install either [Docker engine](https://docs.docker.com/get-started/get-docker/) on MacOS or [Apptainer (singularity)](https://apptainer.org/docs/admin/main/installation.html)
+
+  For simplier Apptainer (singularity) installation on Linux:
 
 ```bash
 sudo apt update
@@ -60,7 +61,3 @@ cd pythia-jets-simple-tutorial
 apptainer pull rivet-pythia.sif docker://hepstore/rivet-pythia:main
 apptainer exec rivet-pythia.sif bash
 ```
-
-#### Important!
-
-Do not forget to comment in your `~/.bashrc` sourcing your local Root installation (`source /path/thisroot.sh`), otherwise there will be a conflict of 2 ROOT versions: one - from your local installation, another - from STAR container.
